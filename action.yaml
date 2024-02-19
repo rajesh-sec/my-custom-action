@@ -25,4 +25,4 @@ runs:
     - name: Print Language
       shell: bash
       run: |
-        echo inputs.language
+        echo ${{ inputs.language }}
