@@ -1,0 +1,26 @@
+name: Qwiet ShiftLeft Scan
+description: 'Qwiet ShiftLeft SAST Scan'
+inputs:
+  language:
+    description: 'The github code language'
+    required: true
+
+#outputs:
+#  random-number:
+#    description: "Random number"#
+#    value: ${{ steps.random-number-generator.outputs.random-number }}
+runs:
+  using: "composite"
+  steps:
+    - name: Extract branch name
+      shell: bash
+      run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+      id: extract_branch
+      
+    - name: List Directory
+      run: |
+        ls -l
+    
+    - name: Print Language
+      run: |
+        echo inputs.language
