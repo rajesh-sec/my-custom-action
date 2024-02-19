@@ -26,3 +26,14 @@ runs:
       shell: bash
       run: |
         echo ${{ inputs.language }}
+
+    - name: Set GitHub Action Path
+      run: echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+      shell: bash
+      env:
+        GITHUB_ACTION_PATH: ${{ github.action_path }}
+
+    - name: List Directory After Path
+      shell: bash
+      run: |
+        ls -l
