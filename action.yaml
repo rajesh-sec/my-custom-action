@@ -18,9 +18,11 @@ runs:
       id: extract_branch
       
     - name: List Directory
+      shell: bash
       run: |
         ls -l
     
     - name: Print Language
+      shell: bash
       run: |
         echo inputs.language
