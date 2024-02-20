@@ -27,12 +27,19 @@ runs:
       run: |
         echo ${{ inputs.language }}
 
-    - name: Set GitHub Action Path
+    - name: 'Checkout repository'
+      uses: actions/checkout@v3
+      
+    - name: 'List action DIrectory'
       run: |
-        echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
-        echo ${{ github.action_path }}
-        ls -l
-      shell: bash
+        ls my-custom-action
+
+    # - name: Set GitHub Action Path
+    #   run: |
+    #     echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+    #     echo ${{ github.action_path }}
+    #     ls -l
+    #   shell: bash
       env:
         GITHUB_ACTION_PATH: ${{ github.action_path }}
 
