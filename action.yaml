@@ -28,9 +28,11 @@ runs:
         echo ${{ inputs.language }}
 
     - name: 'Checkout repository'
+      shell: bash
       uses: actions/checkout@v3
       
     - name: 'List action DIrectory'
+      shell: bash
       run: |
         ls my-custom-action
 
