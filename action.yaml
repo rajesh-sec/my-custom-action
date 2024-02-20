@@ -24,8 +24,10 @@ runs:
     
     - name: Print Language
       shell: bash
+      env: 
+        command: ${{ inputs.language }}
       run: |
-        echo ${{ inputs.language }}
+        echo $command
       
     - name: 'List action DIrectory'
       shell: bash
