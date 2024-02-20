@@ -26,14 +26,10 @@ runs:
       shell: bash
       run: |
         echo ${{ inputs.language }}
-
-    - name: 'Checkout repository'
-      uses: actions/checkout@v3
       
     - name: 'List action DIrectory'
       shell: bash
-      run: |
-        ls my-custom-action
+      run: cat ${GITHUB_ACTION_PATH}/hello.txt
 
     # - name: Set GitHub Action Path
     #   run: |
@@ -41,10 +37,10 @@ runs:
     #     echo ${{ github.action_path }}
     #     ls -l
     #   shell: bash
-      env:
-        GITHUB_ACTION_PATH: ${{ github.action_path }}
+      # env:
+      #   GITHUB_ACTION_PATH: ${{ github.action_path }}
 
-    - name: List Directory After Path
-      shell: bash
-      run: |
-        ls -l
+    # - name: List Directory After Path
+    #   shell: bash
+    #   run: |
+    #     ls -l
