@@ -27,7 +27,7 @@ runs:
       env: 
         command: ${{ inputs.language }}
       run: |
-        echo ${{ command }}
+        echo ${command}
       
     - name: 'List action DIrectory'
       shell: bash
