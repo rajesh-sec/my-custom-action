@@ -9,10 +9,10 @@ inputs:
 #  random-number:
 #    description: "Random number"#
 #    value: ${{ steps.random-number-generator.outputs.random-number }}
-env:
-  CUSTOM_GREET: "HI: ${{ inputs.language }}"
 runs:
   using: "composite"
+  env:
+    CUSTOM_GREET: "HI: ${{ inputs.language }}"
   steps:
     - name: Extract branch name
       shell: bash
