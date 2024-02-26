@@ -9,6 +9,8 @@ inputs:
 #  random-number:
 #    description: "Random number"#
 #    value: ${{ steps.random-number-generator.outputs.random-number }}
+env:
+  CUSTOM_GREET: "HI: ${{ inputs.language }}"
 runs:
   using: "composite"
   steps:
@@ -22,12 +24,13 @@ runs:
       run: |
         ls -l
     
-    - name: Print Language
+    - name: Print Language and Custom Greet
       shell: bash
       env: 
         command: ${{ inputs.language }}
       run: |
         echo ${command}
+        echo $CUSTOM_GREET
       
     - name: 'List action DIrectory'
       shell: bash
