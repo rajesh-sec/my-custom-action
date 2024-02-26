@@ -33,8 +33,6 @@ runs:
     - name: 'List action DIrectory'
       shell: bash
       run: cat ${GITHUB_ACTION_PATH}/hello.txt
-  env:
-    CUSTOM_GREET: "HI: ${{ inputs.language }}"
 
     # - name: Set GitHub Action Path
     #   run: |
