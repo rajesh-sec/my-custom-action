@@ -34,6 +34,10 @@ runs:
       shell: bash
       run: cat ${GITHUB_ACTION_PATH}/hello.txt
 
+    - name: 'List action DIrectory other way'
+      shell: bash
+      run: cat ${{github.action_path}}/hello.txt
+
     # - name: Set GitHub Action Path
     #   run: |
     #     echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
